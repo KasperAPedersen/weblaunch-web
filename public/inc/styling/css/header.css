@@ -1,0 +1,40 @@
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 125px;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    display: flex;
+
+}
+
+header>* {
+    border: 1px solid red;
+}
+
+#headerLogo {
+    display: flex;
+    width: 20%;
+}
+
+#headerLogo img {
+    height: calc(100% - 10px);
+    margin: 5px 15px;
+}
+
+#headerLogo h1 {
+    align-self: center;
+    font-size: 2.5rem;
+    padding-left: 15px;
+    font-weight: normal;
+}
+
+#headerNav {
+    width: 60%;
+}
+
+#headerSocials {
+    width: 20%;
+}
