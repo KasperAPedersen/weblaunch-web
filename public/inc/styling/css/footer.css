@@ -1,0 +1,26 @@
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding-top: 30px;
+}
+
+footer section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+footer > p {
+    text-align: center;
+    margin-top: 30px;
+    opacity: 0.5;
+}
+
+footer .bold {
+    font-weight: bold;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}

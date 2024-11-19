@@ -1,0 +1,74 @@
+#contact {
+    height: calc(100vh - 125px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#contactTitle {
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    justify-items: center;
+    align-content: center;
+}
+
+/* Title */
+#contactTitle p {
+    width: 60%;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+}
+
+#contactTitle p span {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* form */
+
+
+#contactContent form {
+    justify-self: center;
+    align-content: center;
+    height: 100%;
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+}
+
+#contact input,
+#contact textarea{
+    padding: 20px 30px;
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: transparent;
+}
+
+/* Hide the spinner for number input fields */
+#contact input[type="number"]::-webkit-outer-spin-button,
+#contact input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+#contact textarea {
+    resize: none;
+    height: 200px;
+}
+
+#contact button {
+    justify-self: right;
+    padding: 20px 60px;
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    border: transparent;
+}
+
+#contact button:hover {
+    cursor: pointer;
+    background-color: var(--quaternary-color);
+}

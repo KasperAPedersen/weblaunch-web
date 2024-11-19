@@ -23,7 +23,71 @@
 
 #prices article {
     padding: 30px;
+    height: 100%;
     background-color: var(--primary-color);
     color: var(--tertiary-color);
     z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+/* cards */
+#prices article h3 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#prices article h4 {
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+}
+
+#prices article ul {
+    list-style: none; /* Remove default list style */
+    padding-left: 0; /* Remove default padding */
+    font-size: 1.1rem;
+}
+
+#prices article ul li {
+    position: relative;
+    padding-left: 25px; /* Adjust padding to make space for the icon */
+    margin-bottom: 25px;
+}
+
+#prices article ul li::before {
+    content: "\f00c"; /* Unicode for FontAwesome check icon */
+    font-family: "Font Awesome 5 Free"; /* FontAwesome font family */
+    font-weight: 900; /* FontAwesome font weight */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--quaternary-color); /* Adjust the color as needed */
+}
+
+#prices article div {
+    display: flex;
+}
+
+#prices article div p {
+    width: 50%;
+    text-align: center;
+    align-self: center;
+    font-size: 1.2rem;
+}
+
+#prices article div button {
+    margin-left: auto;
+    width: 50%;
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    font-size: 1.2rem;
+    border: transparent;
+}
+
+#prices article div button:hover {
+    cursor: pointer;
+    background-color: var(--quaternary-color);
 }
