@@ -1,0 +1,22 @@
+#features {
+    padding: 30px 0;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+#features article {
+    text-align: center;
+    line-height: 2.5rem;
+}
+
+#features article i {
+    font-size: 4rem;
+}
+
+#features article h3 {
+    font-size: 1.5rem;
+}
