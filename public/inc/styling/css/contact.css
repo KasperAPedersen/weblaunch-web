@@ -1,7 +1,8 @@
 #contact {
-    height: calc(100vh - 125px);
+    min-height: calc(100vh - 125px);
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 #contactTitle {
@@ -32,7 +33,6 @@
     height: 100%;
     width: 60%;
     display: grid;
-    grid-template-columns: 1fr;
     row-gap: 10px;
 }
 

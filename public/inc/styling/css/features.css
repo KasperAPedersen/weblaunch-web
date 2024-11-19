@@ -3,9 +3,10 @@
     background-color: var(--primary-color);
     color: var(--tertiary-color);
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     justify-items: center;
     align-items: center;
+    width: 100%;
 }
 
 #features article {
@@ -19,4 +20,8 @@
 
 #features article h3 {
     font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+    /* animate */
 }

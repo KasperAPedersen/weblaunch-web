@@ -1,8 +1,9 @@
 #process {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     background-color: var(--primary-color);
-    color: var(--tertiary-color)
+    color: var(--tertiary-color);
+    width: 100%;
 }
 
 /* Title */
@@ -31,8 +32,9 @@
 }
 
 #processContent>div {
-    padding: 30px;
-    display: flex;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 50px 4fr;
 }
 
 #processContent > div > div {
@@ -59,4 +61,20 @@
 
 #processContent > div > p span {
     font-size: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+    #process {
+        grid-template-columns: 1fr;
+    }
+
+    #processTitle p {
+        line-height: normal;
+        width: calc(100% - 30px);
+    }
+
+    #processTitle {
+        padding: 30px 0;
+    }
+
 }
