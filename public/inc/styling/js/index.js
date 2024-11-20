@@ -1,75 +1,49 @@
-let navigationLinks = document.getElementsByClassName('navBtn');
-let dialogBox = document.getElementById('mobileNavModal');
+const navigationLinks = [...document.getElementsByClassName('navBtn')];
+const dialogBox = document.getElementById('mobileNavModal');
+let navigationBtnUsed = false;
 
-for(let i = 0; i < navigationLinks.length; i++) {
-    navigationLinks[i].addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        const offset = 125;
+const setActiveNav = (target) => {
+    navigationLinks.forEach(link => link.className = "navBtn");
+    target.className = "headerNavActive navBtn";
+};
 
-        window.scrollTo({
-            top: targetElement.offsetTop - offset,
-            behavior: 'smooth'
-        });
-
-        if(dialogBox.open) dialogBox.close();
-        for(let i = 0; i < navigationLinks.length; i++) navigationLinks[i].classList = "navBtn";
-        e.target.classList = "headerNavActive navBtn";
+const scrollToSection = (targetId) => {
+    window.scrollTo({
+        top: document.getElementById(targetId).offsetTop - 125,
+        behavior: 'smooth'
     });
-}
+};
 
-let mobileNavToggle = () => {
-    if(dialogBox.open) {
-        dialogBox.close();
-        dialogBox.style.display = "none";
-    } else {
-        dialogBox.showModal();
-        dialogBox.style.display = "grid";
-    }
-}
-
-dialogBox.addEventListener('click', (event) => {
-    let rect = dialogBox.getBoundingClientRect();
-    let isInDialog =
-        event.clientX >= rect.left &&
-        event.clientX <= rect.right &&
-        event.clientY >= rect.top &&
-        event.clientY <= rect.bottom;
-
-    if(!isInDialog) dialogBox.close();
+navigationLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        navigationBtnUsed = true;
+        setTimeout(() => navigationBtnUsed = false, 1000);
+        scrollToSection(link.getAttribute('href').substring(1));
+        if (dialogBox.open) dialogBox.close();
+        setActiveNav(e.target);
+    });
 });
 
+const mobileNavToggle = () => {
+    dialogBox.open ? dialogBox.close() : dialogBox.showModal();
+    dialogBox.style.display = dialogBox.open ? "none" : "grid";
+};
 
-let currentNavHead = 1;
-window.addEventListener('scroll', (e) =>  {
-   let pages = [
-       document.getElementById('about'),
-       document.getElementById('prices'),
-       document.getElementById('contact')
-   ];
+dialogBox.addEventListener('click', (event) => {
+    const rect = dialogBox.getBoundingClientRect();
+    if (!(event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom)) {
+        dialogBox.close();
+    }
+});
 
-   let navBtns = [
-       document.getElementById('headerNavAbout'),
-       document.getElementById('headerNavPrices'),
-       document.getElementById('headerNavContact')
-   ];
-
-   let usePage = 0;
-   for(let i = 0; i < pages.length; i++){
+window.addEventListener('scroll', () => {
+    const pages = ['about', 'prices', 'contact'].map(id => document.getElementById(id));
+    const navBtns = ['headerNavAbout', 'headerNavPrices', 'headerNavContact'].map(id => document.getElementById(id));
 
 
-       let page = pages[usePage].getBoundingClientRect();
-       let checkPage = pages[i].getBoundingClientRect();
-
-       let pageTop = Math.trunc(Number(String(page.top).replace('-', '')));
-       let checkPageTop = Math.trunc(Number(String(checkPage.top).replace('-', '')));
-
-       if(pageTop < checkPageTop) continue;
-
-       usePage = i;
-
-       for(let o = 0; o < navBtns.length; o++) navBtns[o].classList = "navBtn";
-       navBtns[usePage].classList = "headerNavActive navBtn";
-   }
+    if (navigationBtnUsed) return;
+    const usePage = pages.reduce((closest, page, i) =>
+        Math.abs(page.getBoundingClientRect().top) < Math.abs(pages[closest].getBoundingClientRect().top) ? i : closest, 0);
+    setActiveNav(navBtns[usePage]);
 });
