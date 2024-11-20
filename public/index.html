@@ -28,14 +28,27 @@
             </section>
             <section id="headerNav">
 
-                <a href="#about" class="headerNavActive">Om Os</a><a href="#prices">Priser</a><a href="#contact">Kontakt</a>
+                <a href="#about" class="headerNavActive navBtn">Om Os</a><a class="navBtn" href="#prices">Priser</a><a class="navBtn" href="#contact">Kontakt</a>
             </section>
             <section id="headerSocials">
                 <i class="fa fa-linkedin-square" aria-hidden="true"></i>
                 <i class="fa fa-facebook-square" aria-hidden="true"></i>
             </section>
             <section id="mobileNav">
-                <i class="fa-solid fa-bars"></i>
+                <i onclick="mobileNavToggle();" class="fa-solid fa-bars"></i>
+                <dialog>
+                    <section>
+                        <i onclick="mobileNavToggle();" class="fa-solid fa-xmark"></i>
+                    </section>
+                    <section>
+                        <a href="#about" class="headerNavActive navBtn">Om Os</a><a class="navBtn" href="#prices">Priser</a><a class="navBtn" href="#contact">Kontakt</a>
+
+                    </section>
+                    <section>
+                        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    </section>
+                </dialog>
             </section>
         </header>
         <main>

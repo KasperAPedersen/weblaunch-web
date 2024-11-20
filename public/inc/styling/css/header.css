@@ -76,6 +76,89 @@ header>* {
     display: none;
 }
 
+#mobileNav i {
+    cursor: pointer;
+}
+
+#mobileNav dialog {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: 1fr 60% 1fr;
+    grid-template-areas:
+        "top"
+        "middle"
+        "bottom";
+    justify-self: center;
+    align-self: center;
+    width: calc(60% - 30px);
+    height: calc(100% - 30px);
+    border: transparent;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    padding: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+    opacity: 0;
+    transition: all 0.3s allow-discrete;
+}
+
+#mobileNav dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 0.3s allow-discrete;
+}
+
+#mobileNav dialog[open] {
+    opacity: 1;
+}
+
+#mobileNav dialog[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@starting-style {
+    #mobileNav dialog[open] {
+        opacity: 0;
+    }
+
+    #mobileNav dialog[open]::backdrop {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+#mobileNav dialog > section:first-of-type {
+    grid-area: top;
+    justify-self: right;
+}
+
+#mobileNav dialog > section:first-of-type i {
+    font-size: 3rem;
+    color: var(--tertiary-color);
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#mobileNav dialog > section:nth-of-type(2) {
+
+    grid-area: middle;
+    text-align: center;
+}
+
+#mobileNav dialog > section:nth-of-type(2) a {
+    display: block;
+    padding: 30px 0;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 2rem;
+}
+
+#mobileNav dialog > section:last-of-type {
+    grid-area: bottom;
+    text-align: center;
+    align-content: center;
+    letter-spacing: 0.2rem;
+    font-size: 2rem;
+}
+
 /* Responsive */
 @media only screen and (max-width: 1100px) {
     #headerSocials,
@@ -84,7 +167,6 @@ header>* {
     }
 
     #mobileNav {
-
     display: flex;
     justify-content: right;
     align-items: center;
@@ -93,10 +175,24 @@ header>* {
     }
 }
 
+@media only screen and (max-width: 1024px) {
+    #mobileNav dialog {
+        width: calc(80% - 30px);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #mobileNav dialog {
+        width: calc(90% - 30px);
+    }
+}
+
 @media only screen and (max-width: 425px) {
-
-
     #headerLogo h1 {
         display: none;
+    }
+
+    #mobileNav dialog {
+        width: 100%;
     }
 }
