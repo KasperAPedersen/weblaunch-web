@@ -28,3 +28,14 @@ let mobileNavToggle = () => {
         dialogBox.style.display = "grid";
     }
 }
+
+dialogBox.addEventListener('click', (event) => {
+    let rect = dialogBox.getBoundingClientRect();
+    let isInDialog =
+        event.clientX >= rect.left &&
+        event.clientX <= rect.right &&
+        event.clientY >= rect.top &&
+        event.clientY <= rect.bottom;
+
+    if(!isInDialog) dialogBox.close();
+})
