@@ -1,5 +1,5 @@
 let navigationLinks = document.getElementsByClassName('navBtn');
-let dialogBox = document.getElementById('mobileNav').getElementsByTagName('dialog')[0];
+let dialogBox = document.getElementById('mobileNavModal');
 
 for(let i = 0; i < navigationLinks.length; i++) {
     navigationLinks[i].addEventListener('click', function (e) {
