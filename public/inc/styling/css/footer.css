@@ -1,7 +1,7 @@
 footer {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    padding-top: 30px;
+    padding: 30px 0;
     width: 100%;
 }
 
@@ -12,12 +12,12 @@ footer section {
 }
 
 footer section > * {
-    width: 100%;
+    width: calc(100% - 30px);
     text-align: center;
-    padding: 15px 0;
 }
 
 footer > p {
+    width: 100%;
     text-align: center;
     margin-top: 30px;
     opacity: 0.5;

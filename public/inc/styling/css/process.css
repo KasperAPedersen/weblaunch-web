@@ -74,7 +74,28 @@
     }
 
     #processTitle {
-        padding: 30px 0;
+        padding: 30px 15px;
     }
 
+    #processContent {
+        padding: 15px;
+    }
+
+    #processContent > div > p span {
+        font-size: 1.8rem;
+    }
+
+    #processContent > div > div > p {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    #processContent p {
+        font-size: 1rem;
+    }
+
+    #processContent > div > p {
+        margin-left: 10px;
+    }
 }
