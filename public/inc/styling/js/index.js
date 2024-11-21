@@ -26,8 +26,8 @@ navigationLinks.forEach(link => {
 });
 
 const mobileNavToggle = () => {
-    dialogBox.open ? dialogBox.close() : dialogBox.showModal();
     dialogBox.style.display = dialogBox.open ? "none" : "grid";
+    dialogBox.open ? dialogBox.close() : dialogBox.showModal();
 };
 
 dialogBox.addEventListener('click', (event) => {
