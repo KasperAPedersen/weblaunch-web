@@ -5,12 +5,12 @@ const route = new Router();
 
 const transporter = nodemailer.createTransport({
     service: "Gmail",
-    host: 'smtp.gmail.com',
-    port: 465,
+    host: 'smtp.simply.com',
+    port: 587,
     secure: true,
     auth: {
-        user: 'mathiasholstseeger@gmail.com',
-        pass: 'lpaf txrn tpkw vxyp'
+        user: 'mathiaskjan@yahoo.dk',
+        pass: ''
     }
 });
 
