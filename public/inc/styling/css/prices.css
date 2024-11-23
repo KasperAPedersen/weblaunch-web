@@ -74,13 +74,15 @@
 #prices article div {
     display: grid;
     grid-template-columns:  repeat(2, 50%);
+    grid-column-gap: 10px;
     align-self: end;
 }
 
 #prices article div p {
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     align-self: center;
+    justify-self: start;
 }
 
 #prices article div p strong {
@@ -89,7 +91,6 @@
 
 #prices article div button {
     grid-column-start: 2;
-    grid-column-end: 3;
     height: 50px;
     width: 100px;
     background-color: var(--secondary-color);
