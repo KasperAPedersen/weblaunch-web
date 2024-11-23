@@ -9,6 +9,7 @@
     padding: 15px;
 }
 
+
 #prices::before {
     content: "";
     position: absolute;
@@ -23,7 +24,6 @@
 }
 
 #prices article {
-    border: 1px solid var(--quaternary-color);
     margin: 15px;
     padding: 30px;
     height: calc(100% - 30px);
@@ -57,8 +57,7 @@
 #prices article ul li {
     position: relative;
     padding-left: 25px; /* Adjust padding to make space for the icon */
-    margin-bottom: 25px;
-    margin-top: 25px;
+    margin-bottom: 15px;
 }
 
 #prices article ul li::before {
@@ -89,10 +88,15 @@
     font-weight: bold;
 }
 
+#prices article div span {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+}
+
 #prices article div button {
     grid-column-start: 2;
     height: 50px;
-    width: 100px;
+    width: 100%;
     background-color: var(--secondary-color);
     color: var(--tertiary-color);
     font-size: 1.2rem;
