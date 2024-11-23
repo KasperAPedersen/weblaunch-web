@@ -62,7 +62,7 @@
 
 #prices article ul li::before {
     content: "\f00c"; /* Unicode for FontAwesome check icon */
-    font-family: "Font Awesome 5 Free"; /* FontAwesome font family */
+    font-family: "Font Awesome 5 Free", sans-serif; /* FontAwesome font family */
     font-weight: 900; /* FontAwesome font weight */
     position: absolute;
     left: 0;

@@ -24,11 +24,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../../images/Omos.webp");
+    background-image: url("../../images/omos.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.4; /* Adjust the opacity value as needed */
+    opacity: 0.3; /* Adjust the opacity value as needed */
     z-index: 1;
+    filter: blur(5px); /* Adjust the blur value as needed */
 }
 
 #aboutText > * {
