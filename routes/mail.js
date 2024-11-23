@@ -1,5 +1,5 @@
-import nodemailer from 'npm:nodemailer';
-import Router from 'express';
+import nodemailer from 'nodemailer';
+import { Router } from 'express';
 
 const route = new Router();
 

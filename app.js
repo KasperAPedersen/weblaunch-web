@@ -1,7 +1,7 @@
 import mail  from './routes/mail.js';
+import Models from './orm/Models.js';
 
-import Express from 'npm:express';
-let Express =  require('express');
+import Express from 'express';
 
 const app = new Express();
 
