@@ -113,7 +113,7 @@
 /* Price card */
 #priceCardModal {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-self: center;
     align-self: center;
     width: calc(80% - 60px);
@@ -169,6 +169,19 @@
     background-color: #fff;
 }
 
+#priceCardForm i {
+    color: var(--primary-color);
+    font-size: 2rem;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
+#priceCardForm i:hover {
+    color: var(--secondary-color);
+}
+
 #priceCardForm input,
 #priceCardForm textarea{
     padding: 15px 30px;
@@ -194,4 +207,18 @@
 #priceCardForm button:hover {
     cursor: pointer;
     background-color: var(--quaternary-color);
+}
+
+@media only screen and (max-width: 1100px) {
+    #priceCardText {
+        display: none;
+    }
+
+    #priceCardForm {
+        background-color: var(--primary-color);
+    }
+
+    #priceCardForm * {
+        color: var(--tertiary-color);
+    }
 }
