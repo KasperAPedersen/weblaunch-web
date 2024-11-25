@@ -109,3 +109,8 @@
     cursor: pointer;
     background-color: var(--quaternary-color);
 }
+
+/* Price card */
+#priceCardModal {
+    display: block;
+}
