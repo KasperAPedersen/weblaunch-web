@@ -112,5 +112,86 @@
 
 /* Price card */
 #priceCardModal {
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-self: center;
+    align-self: center;
+    width: calc(80% - 60px);
+    height: calc(100% - 60px);
+    border: transparent;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+    opacity: 0;
+    transition: all 0.3s allow-discrete;
+}
+
+#priceCardModal::backdrop {
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 0.3s allow-discrete;
+}
+
+#priceCardModal[open] {
+    opacity: 1;
+}
+
+#priceCardModal[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@starting-style {
+    #priceCardModal[open] {
+        opacity: 0;
+    }
+
+    #priceCardModal[open]::backdrop {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+#priceCardText article {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.0);
+}
+
+#priceCardForm form {
+    justify-self: center;
+    align-content: center;
+    width: calc(80% - 60px);
+    height: calc(100% - 60px);
+    margin: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+}
+
+#priceCardForm {
+    background-color: #fff;
+}
+
+#priceCardForm input,
+#priceCardForm textarea{
+    padding: 15px 30px;
+    width: 100%;
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: transparent;
+}
+
+#priceCardForm textarea {
+    resize: none;
+    height: 200px;
+}
+
+#priceCardForm button {
+    justify-self: right;
+    padding: 20px 60px;
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    border: transparent;
+}
+
+#priceCardForm button:hover {
+    cursor: pointer;
+    background-color: var(--quaternary-color);
 }

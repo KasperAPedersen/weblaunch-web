@@ -23,4 +23,20 @@ route.get('/getAllCards', async (req, res) => {
     res.end();
 });
 
+route.get('/getCard/:id', async (req, res) => {
+    let price = await Models.Prices.findOne({ where: { id: req.params.id } });
+    let priceFeatures = await Models.PriceFeatures.findAll({ where: { price_id: price.id } });
+
+    let cardData = {
+        "id": price.id,
+        "name": price.name,
+        "description": price.description,
+        "price": price.price,
+        "features": priceFeatures
+    };
+
+    res.json(cardData);
+    res.end();
+});
+
 export default route;

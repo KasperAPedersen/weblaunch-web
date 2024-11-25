@@ -84,8 +84,36 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-let viewCard = (id) => {
-    togglePriceCardModal();
+let viewCard = async (id) => {
+    try {
+        togglePriceCardModal();
+        const response = await fetch('/getCard/' + id);
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        const data = await response.json();
+        document.getElementById('priceCardText').innerHTML = "";
+
+        let card = document.createElement('article');
+        card.innerHTML = `
+            <h3>${data.name}</h3>
+            <h4>${data.description}</h4>
+            <ul>
+                ${(
+            data.features.map(feature => {
+                        return `<li>${feature.description}</li>`;
+                    }).join('')
+                )}
+            </ul>
+            <div>
+                <p><strong>${data.price !== null ? `${data.price},-</strong><br><span>(ekskl. moms)</span>` : "Få et tilbud"}</p>
+            </div>`;
+
+        document.getElementById('priceCardText').appendChild(card);
+
+    } catch (error) {
+        console.error('There has been a problem with your fetch operation:', error);
+    }
 }
 
 let togglePriceCardModal = () => {
