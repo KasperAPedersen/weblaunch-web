@@ -1,226 +1,233 @@
 <!DOCTYPE HTML>
 <html lang="da">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>WebLaunch</title>
-        <link rel="apple-touch-icon" sizes="180x180" href="Inc/Images/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="Inc/Images/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="Inc/Images/favicon/favicon-16x16.png">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WebLaunch</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="Inc/Images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Inc/Images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Inc/Images/favicon/favicon-16x16.png">
 
-        <script src="https://kit.fontawesome.com/d7cb81324e.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="inc/styling/css/common.css">
-        <link rel="stylesheet" href="inc/styling/css/header.css">
-        <link rel="stylesheet" href="inc/styling/css/welcome.css">
-        <link rel="stylesheet" href="inc/styling/css/features.css">
-        <link rel="stylesheet" href="inc/styling/css/about.css">
-        <link rel="stylesheet" href="inc/styling/css/process.css">
-        <link rel="stylesheet" href="inc/styling/css/prices.css">
-        <link rel="stylesheet" href="inc/styling/css/contact.css">
-        <link rel="stylesheet" href="inc/styling/css/footer.css">
+    <script src="https://kit.fontawesome.com/d7cb81324e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="inc/styling/css/common.css">
+    <link rel="stylesheet" href="inc/styling/css/header.css">
+    <link rel="stylesheet" href="inc/styling/css/welcome.css">
+    <link rel="stylesheet" href="inc/styling/css/features.css">
+    <link rel="stylesheet" href="inc/styling/css/about.css">
+    <link rel="stylesheet" href="inc/styling/css/process.css">
+    <link rel="stylesheet" href="inc/styling/css/prices.css">
+    <link rel="stylesheet" href="inc/styling/css/contact.css">
+    <link rel="stylesheet" href="inc/styling/css/footer.css">
 
-    </head>
-    <body>
-        <header>
-            <section id="headerLogo">
-                <img src="inc/images/weblaunch-logo.png" alt="WebLaunch logo">
-                <h1>WebLaunch</h1>
+</head>
+<body>
+<header>
+    <section id="headerLogo">
+        <img src="inc/images/weblaunch-logo.png" alt="WebLaunch logo">
+        <h1>WebLaunch</h1>
+    </section>
+    <section id="headerNav">
+
+        <a href="#about" class="headerNavActive navBtn" id="headerNavAbout">Om Os</a><a class="navBtn" href="#prices"
+                                                                                        id="headerNavPrices">Priser</a><a
+            class="navBtn" href="#contact" id="headerNavContact">Kontakt</a>
+    </section>
+    <section id="headerSocials">
+        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+    </section>
+    <section id="mobileNav">
+        <i onclick="mobileNavToggle();" class="fa-solid fa-bars"></i>
+        <dialog id="mobileNavModal">
+            <section>
+                <i onclick="mobileNavToggle();" class="fa-solid fa-xmark"></i>
             </section>
-            <section id="headerNav">
-
-                <a href="#about" class="headerNavActive navBtn" id="headerNavAbout">Om Os</a><a class="navBtn" href="#prices" id="headerNavPrices">Priser</a><a class="navBtn" href="#contact" id="headerNavContact">Kontakt</a>
+            <section>
+                <a href="#about" class="headerNavActive navBtn">Om Os</a><a class="navBtn" href="#prices">Priser</a><a
+                    class="navBtn" href="#contact">Kontakt</a>
             </section>
-            <section id="headerSocials">
+            <section>
                 <i class="fa fa-linkedin-square" aria-hidden="true"></i>
                 <i class="fa fa-facebook-square" aria-hidden="true"></i>
             </section>
-            <section id="mobileNav">
-                <i onclick="mobileNavToggle();" class="fa-solid fa-bars"></i>
-                <dialog id="mobileNavModal">
-                    <section>
-                        <i onclick="mobileNavToggle();" class="fa-solid fa-xmark"></i>
-                    </section>
-                    <section>
-                        <a href="#about" class="headerNavActive navBtn">Om Os</a><a class="navBtn" href="#prices">Priser</a><a class="navBtn" href="#contact">Kontakt</a>
-                    </section>
-                    <section>
-                        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
-                    </section>
-                </dialog>
-            </section>
-        </header>
-        <main>
-            <section id="welcome">
-                <article id="welcomeTitle">
-                    <h2>Velkommen til WebLaunch<br><span>- Din Partner i Digital Succes!</span></h2>
-                </article>
-                <article id="welcomeText">
-                    <p>Vi er her for at hjælpe dig med at realisere dine digitale drømme. Uanset om du er en iværksætter på
-                        udkig efter en professionel hjemmeside, en virksomhed der vil styrke sin online tilstedeværelse, eller
-                        en etableret virksomhed med behov for en frisk opdatering, så står vores team klar til at hjælpe.<br><br>
+        </dialog>
+    </section>
+</header>
+<main>
+    <section id="welcome">
+        <article id="welcomeTitle">
+            <h2>Velkommen til WebLaunch<br><span>- Din Partner i Digital Succes!</span></h2>
+        </article>
+        <article id="welcomeText">
+            <p>Vi er her for at hjælpe dig med at realisere dine digitale drømme. Uanset om du er en iværksætter på
+                udkig efter en professionel hjemmeside, en virksomhed der vil styrke sin online tilstedeværelse, eller
+                en etableret virksomhed med behov for en frisk opdatering, så står vores team klar til at
+                hjælpe.<br><br>
 
-                        Hos WebLaunch tror vi på at kombinere kreativitet og teknologi for at levere løsninger, der både
-                        imponerer visuelt og performer teknisk. Din succes er vores mission, og vi sørger for, at du står
-                        stærkt i den digitale verden.<br><br>
+                Hos WebLaunch tror vi på at kombinere kreativitet og teknologi for at levere løsninger, der både
+                imponerer visuelt og performer teknisk. Din succes er vores mission, og vi sørger for, at du står
+                stærkt i den digitale verden.<br><br>
 
-                        Lad os tage det første skridt sammen – din rejse mod en bedre online tilstedeværelse begynder her! 🚀</p>
-                </article>
-            </section>
+                Lad os tage det første skridt sammen – din rejse mod en bedre online tilstedeværelse begynder her! 🚀</p>
+        </article>
+    </section>
 
-            <section id="features">
-                <article>
-                    <i class="fa-brands fa-html5"></i>
-                    <h3>HTML5</h3>
-                </article>
-                <article>
-                    <i class="fa-brands fa-css3-alt"></i>
-                    <h3>CSS3</h3>
-                </article>
-                <article>
-                    <i class="fa-solid fa-database"></i>
-                    <h3>MySQL</h3>
-                </article>
-                <article>
-                    <i class="fa-brands fa-js"></i>
-                    <h3>JavaScript</h3>
-                </article>
-                <article>
-                    <i class="fa-brands fa-node-js"></i>
-                    <h3>NodeJS</h3>
-                </article>
-                <article>
-                    <i class="fa-solid fa-grip"></i>
-                    <h3>Grid System</h3>
-                </article>
-                <article>
-                    <i class="fa-solid fa-code"></i>
-                    <h3>Skræddersyet</h3>
-                </article>
-            </section>
+    <section id="features">
+        <article>
+            <i class="fa-brands fa-html5"></i>
+            <h3>HTML5</h3>
+        </article>
+        <article>
+            <i class="fa-brands fa-css3-alt"></i>
+            <h3>CSS3</h3>
+        </article>
+        <article>
+            <i class="fa-solid fa-database"></i>
+            <h3>MySQL</h3>
+        </article>
+        <article>
+            <i class="fa-brands fa-js"></i>
+            <h3>JavaScript</h3>
+        </article>
+        <article>
+            <i class="fa-brands fa-node-js"></i>
+            <h3>NodeJS</h3>
+        </article>
+        <article>
+            <i class="fa-solid fa-grip"></i>
+            <h3>Grid System</h3>
+        </article>
+        <article>
+            <i class="fa-solid fa-code"></i>
+            <h3>Skræddersyet</h3>
+        </article>
+    </section>
 
-            <section id="about">
-                <article id="aboutText">
-                    <p> Hos WebLaunch har vi én klar mission: at gøre professionelt webdesign tilgængeligt for alle. Vi
-                        skaber hjemmesider, der kombinerer æstetik, funktionalitet og innovation – skræddersyet til dine
-                        unikke behov og mål.<br><br>
-                        Vi tror på, at en hjemmeside ikke blot er et digitalt visitkort, men et værktøj, der kan styrke din forretning, engagere dine
-                        kunder og hjælpe dig med at vokse.<br><br>
+    <section id="about">
+        <article id="aboutText">
+            <p> Hos WebLaunch har vi én klar mission: at gøre professionelt webdesign tilgængeligt for alle. Vi
+                skaber hjemmesider, der kombinerer æstetik, funktionalitet og innovation – skræddersyet til dine
+                unikke behov og mål.<br><br>
+                Vi tror på, at en hjemmeside ikke blot er et digitalt visitkort, men et værktøj, der kan styrke din
+                forretning, engagere dine
+                kunder og hjælpe dig med at vokse.<br><br>
 
-                        Vores tilgang er simpel, men effektiv:<br><br></p>
+                Vores tilgang er simpel, men effektiv:<br><br></p>
 
-                    <ul>
-                        <li><strong>Samarbejde:</strong> Vi lytter til dine ønsker og behov og gør dem til virkelighed.<br></li>
-                        <li><strong>Kvalitet:</strong> Hver hjemmeside vi leverer er bygget med omhu, kreativitet og høj teknisk standard.<br></li>
-                        <li><strong>Fokus:</strong> Vores mål er din succes – vi arbejder for, at din virksomhed skiller sig ud online.<br><br></li>
-                    </ul>
+            <ul>
+                <li><strong>Samarbejde:</strong> Vi lytter til dine ønsker og behov og gør dem til virkelighed.<br></li>
+                <li><strong>Kvalitet:</strong> Hver hjemmeside vi leverer er bygget med omhu, kreativitet og høj teknisk
+                    standard.<br></li>
+                <li><strong>Fokus:</strong> Vores mål er din succes – vi arbejder for, at din virksomhed skiller sig ud
+                    online.<br><br></li>
+            </ul>
 
-                       <p> Uanset om du er en startup, der ønsker en professionel start, eller en etableret virksomhed på jagt
-                        efter et nyt look, er vi her for at hjælpe dig. WebLaunch er din partner i at opnå digitale ambitioner
-                        og skabe resultater, der tæller.<br><br>
+            <p> Uanset om du er en startup, der ønsker en professionel start, eller en etableret virksomhed på jagt
+                efter et nyt look, er vi her for at hjælpe dig. WebLaunch er din partner i at opnå digitale ambitioner
+                og skabe resultater, der tæller.<br><br>
+            </p>
+        </article>
+        <article id="aboutTitle">
+            <i class="fa-solid fa-handshake"></i>
+            <h3>Vores mission</h3>
+        </article>
+    </section>
 
-                        <strong>Lad os sammen bygge en stærk online tilstedeværelse!</strong></p>
-                </article>
-                <article id="aboutTitle">
-                    <i class="fa-solid fa-handshake"></i>
-                    <h3>Vores mission</h3>
-                </article>
-            </section>
+    <section id="process">
+        <article id="processTitle">
+            <p><span>Processen</span><br><br>Det skal være nemt at få lavet en hjemmeside hos os. Derfor tager vi altid
+                udgangspunkt i samme proces, som er baseret på vores mange erfaringer. På den måde ved du altid, hvad
+                næste trin er.</p>
+        </article>
+        <article id="processContent">
+            <div>
+                <div><p>1</p></div>
+                <p><span>Opstart</span><br>Vi tager en dialog og bliver klogere på virksomheden og dine ønsker.
+                </p>
+            </div>
+            <div>
+                <div><p>2</p></div>
+                <p><span>Design</span><br>Når vi har modtaget dit materiale, begynder vi at designe din hjemmeside.
+                </p>
+            </div>
+            <div>
+                <div><p>3</p></div>
+                <p><span>Godkendelse</span><br>Rettelser laves i tæt samarbejde med dig, så siden matcher dine ønsker.
+                </p>
+            </div>
+            <div>
+                <div><p>4</p></div>
+                <p><span>Færdiggørelse</span><br>Her udarbejdes de resterende sider, og funktionaliteter opsættes.
+                </p>
+            </div>
+            <div>
+                <div><p>5</p></div>
+                <p><span>Lancering</span><br>Efterfølgende lanceres hjemmesiden, og ejerskabet overdrages til dig.
+                </p>
+            </div>
+        </article>
+    </section>
 
-            <section id="process">
-                <article id="processTitle">
-                    <p><span>Processen</span><br><br>Det skal være nemt at få lavet en hjemmeside hos os. Derfor tager vi altid
-                        udgangspunkt i samme proces, som er baseret på vores mange erfaringer. På den måde ved du altid, hvad
-                        næste trin er.</p>
-                </article>
-                <article id="processContent">
-                    <div>
-                        <div><p>1</p></div>
-                        <p><span>Opstart</span><br>Vi tager en dialog og bliver klogere på virksomheden og dine ønsker.
-                        </p>
-                    </div>
-                    <div>
-                        <div><p>2</p></div>
-                        <p><span>Design</span><br>Når vi har modtaget dit materiale, begynder vi at designe din hjemmeside.
-                        </p>
-                    </div>
-                    <div>
-                        <div><p>3</p></div>
-                        <p><span>Godkendelse</span><br>Rettelser laves i tæt samarbejde med dig, så siden matcher dine ønsker.
-                        </p>
-                    </div>
-                    <div>
-                        <div><p>4</p></div>
-                        <p><span>Færdiggørelse</span><br>Her udarbejdes de resterende sider, og funktionaliteter opsættes.
-                        </p>
-                    </div>
-                    <div>
-                        <div><p>5</p></div>
-                        <p><span>Lancering</span><br>Efterfølgende lanceres hjemmesiden, og ejerskabet overdrages til dig.
-                        </p>
-                    </div>
-                </article>
-            </section>
+    <section id="prices">
+        <dialog id="priceCardModal" open>
+            <h1>awdawdaad</h1>
+        </dialog>
+    </section>
 
-            <section id="prices">
-                <dialog id="priceCardModal" open>
-                    <h1>awdawdaad</h1>
-                </dialog>
-            </section>
+    <section id="contact">
+        <article id="contactTitle">
+            <p><strong>Kontakt os – Vi er klar til at hjælpe dig!</strong><br><br>
 
-            <section id="contact">
-                <article id="contactTitle">
-                    <p><span><strong>Kontakt os – Vi er klar til at hjælpe dig!</strong></span><br><br>
+                Har du spørgsmål, ønsker du at få et tilbud, eller er du klar til at starte dit næste digitale projekt?
+                Udfyld formularen herunder, så vender vi hurtigt tilbage til dig.<br><br>
 
-                        Har du spørgsmål, ønsker du at få et tilbud, eller er du klar til at starte dit næste digitale projekt?
-                        Udfyld formularen herunder, så vender vi hurtigt tilbage til dig.<br><br>
+                Hos WebLaunch står vi klar til at:<br><br></p>
 
-                        Hos WebLaunch står vi klar til at:<br><br></p>
+            <ul>
+                <li>Skræddersy en løsning, der passer til dine behov.<br></li>
+                <li>Give professionel rådgivning om din online strategi.<br></li>
+                <li>Sikre, at din virksomhed får en stærk digital tilstedeværelse.<br><br></li>
+            </ul>
 
-                    <ul>
-                        <li>Skræddersy en løsning, der passer til dine behov.<br></li>
-                        <li>Give professionel rådgivning om din online strategi.<br></li>
-                        <li>Sikre, at din virksomhed får en stærk digital tilstedeværelse.<br><br></li>
-                    </ul>
-
-                        <p>Vi ser frem til at høre fra dig og hjælpe dig med at løfte din virksomhed til nye højder! 🚀
-                    </p>
-                </article>
-                <article id="contactContent">
-                    <form action="/sendmail" method="POST">
-                        <input type="text" name="name" placeholder="Navn">
-                        <input type="email" name="email" placeholder="Email">
-                        <input type="number" name="phone" placeholder="Telefon">
-                        <input type="text" name="subject" placeholder="Emne">
-                        <textarea name="message" placeholder="Message"></textarea>
-                        <button type="submit">Send</button>
-                    </form>
-                </article>
-            </section>
-        </main>
-        <footer>
-            <section>
-                <article>
-                    <p>
-                        <span class="bold">WebLaunch</span><br>
-                        <span class="bold">CVR:</span> 41291664
-                    </p>
-                </article>
-                <article>
-                    <p>
-                        <span class="bold">Telefon:</span> <a href="tel:25152778">+45 25 15 27 78</a><br>
-                        <span class="bold">E-mail:</span> kontakt@weblaunch.dk
-                    </p>
-                </article>
-                <article>
-                    <p>
-                        <span class="bold">Hverdage:</span> 09:00 - 14:00 (Fredag til 12.00)<br>
-                        <span class="bold">Pause:</span> 11:00 - 12:00
-                    </p>
-                </article>
-            </section>
-            <p>Copyright &copy; 2024 WebLaunch. All Rights Reserved.</p>
-        </footer>
-        <script src="inc/styling/js/index.js"></script>
-    </body>
+            <p>Vi ser frem til at høre fra dig og hjælpe dig med at løfte din
+                virksomhed til nye højder! 🚀
+            </p>
+        </article>
+        <article id="contactContent">
+            <form action="/sendmail" method="POST">
+                <input type="text" name="name" placeholder="Navn">
+                <input type="email" name="email" placeholder="Email">
+                <input type="number" name="phone" placeholder="Telefon">
+                <input type="text" name="subject" placeholder="Emne">
+                <textarea name="message" placeholder="Besked"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </article>
+    </section>
+</main>
+<footer>
+    <section>
+        <article>
+            <p>
+                <span class="bold">WebLaunch</span><br>
+                <span class="bold">CVR:</span> 41291664
+            </p>
+        </article>
+        <article>
+            <p>
+                <span class="bold">Telefon:</span> <a href="tel:25152778">+45 25 15 27 78</a><br>
+                <span class="bold">E-mail:</span> kontakt@weblaunch.dk
+            </p>
+        </article>
+        <article>
+            <p>
+                <span class="bold">Hverdage:</span> 09:00 - 14:00 (Fredag til 12.00)<br>
+                <span class="bold">Pause:</span> 11:00 - 12:00
+            </p>
+        </article>
+    </section>
+    <p>Copyright &copy; 2024 WebLaunch. All Rights Reserved.</p>
+</footer>
+<script src="inc/styling/js/index.js"></script>
+</body>
 </html>

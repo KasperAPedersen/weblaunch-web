@@ -39,9 +39,25 @@
 }
 
 #aboutText p {
-    width: 60%;
+    width: 70%;
     font-size: 1.4rem;
     line-height: 1.8rem;
+}
+
+#aboutText ul {
+    width: 70%;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    list-style-position: inside;
+}
+
+#aboutText ul li {
+    text-indent: -1.4em; /* Adjust the value as needed */
+    padding-left: 1.4em; /* Adjust the value as needed */
+}
+
+#aboutText strong {
+    font-weight: bold;
 }
 
 /* Title */
