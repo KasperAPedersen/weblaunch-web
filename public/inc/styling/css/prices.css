@@ -167,6 +167,7 @@
 
 #priceCardForm {
     background-color: #fff;
+    color: var(--primary-color);
 }
 
 #priceCardForm i {
@@ -219,6 +220,10 @@
     }
 
     #priceCardForm * {
+        color: var(--tertiary-color);
+    }
+
+    #priceCardForm i {
         color: var(--tertiary-color);
     }
 }

@@ -137,6 +137,18 @@ document.getElementById('orderForm').addEventListener('submit', async (e) => {
     let phone = document.getElementById('orderPhone').value;
     let message = document.getElementById('orderMessage').value;
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Indtast venligst en gyldig email adresse');
+        return;
+    }
+
+    const phoneRegex = /^(?:\+45)?\s?(?:\d{2}\s?){4}$/;
+    if (!phoneRegex.test(phone)) {
+        alert('Indtast venligst et gyldigt telefonnummer');
+        return;
+    }
+
     const data = {
         name: name,
         email: email,
@@ -154,5 +166,52 @@ document.getElementById('orderForm').addEventListener('submit', async (e) => {
         body: JSON.stringify(data)
     });
 
-    togglePriceCardModal();
+    const successMessage = document.createElement('p');
+    successMessage.textContent = 'Din besked er blevet sendt med succes!';
+    document.getElementById('orderForm').appendChild(successMessage);
+});
+
+
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    let name = document.getElementById('contactName').value;
+    let email = document.getElementById('contactMail').value;
+    let phone = document.getElementById('contactPhone').value;
+    let subject = document.getElementById('contactSubject').value;
+    let message = document.getElementById('contactMessage').value;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Indtast venligst en gyldig email adresse');
+        return;
+    }
+
+    const phoneRegex = /^(?:\+45)?\s?(?:\d{2}\s?){4}$/;
+    if (!phoneRegex.test(phone)) {
+        alert('Indtast venligst et gyldigt telefonnummer');
+        return;
+    }
+
+    const data = {
+        name: name,
+        email: email,
+        phone: phone,
+        subject: subject,
+        message: message
+    };
+
+    console.log(data);
+    await fetch('/sendmail', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+
+    // Display success message
+    const successMessage = document.createElement('p');
+    successMessage.textContent = 'Din besked er blevet sendt med succes!';
+    document.getElementById('contactForm').appendChild(successMessage);
 });

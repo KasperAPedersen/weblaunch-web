@@ -174,13 +174,13 @@
                     <section id="priceCardForm">
                         <i onclick="togglePriceCardModal();" class="fa-solid fa-xmark"></i>
                         <form action="/sendmail" method="POST" id="orderForm">
-                            <input type="text" name="name" placeholder="Navn" id="orderName">
-                            <input type="text" name="email" placeholder="Email" id="orderMail">
-                            <input type="text" name="phone" placeholder="Telefon" id="orderPhone">
+                            <input type="text" name="name" placeholder="Navn" id="orderName" required>
+                            <input type="text" name="email" placeholder="Email" id="orderMail" required>
+                            <input type="text" name="phone" placeholder="Telefon" id="orderPhone" required>
                             <select name="selected" hidden="hidden">
                                 <option value="1" id="selectedPackage" selected>Standard</option>
                             </select>
-                            <textarea name="message" placeholder="Besked" id="orderMessage"></textarea>
+                            <textarea name="message" placeholder="Besked" id="orderMessage" required></textarea>
                             <button type="submit">Send</button>
                         </form>
                     </section>
@@ -207,12 +207,12 @@
                     </p>
                 </article>
                 <article id="contactContent">
-                    <form action="/sendmail" method="POST">
-                        <input type="text" name="name" placeholder="Navn">
-                        <input type="email" name="email" placeholder="Email">
-                        <input type="number" name="phone" placeholder="Telefon">
-                        <input type="text" name="subject" placeholder="Emne">
-                        <textarea name="message" placeholder="Besked"></textarea>
+                    <form action="/sendmail" method="POST" id="contactForm">
+                        <input type="text" name="name" placeholder="Navn" id="contactName" required>
+                        <input type="email" name="email" placeholder="Email" id="contactMail" required>
+                        <input type="number" name="phone" placeholder="Telefon" id="contactPhone" required>
+                        <input type="text" name="subject" placeholder="Emne" id="contactSubject" required>
+                        <textarea name="message" placeholder="Besked" id="contactMessage" required></textarea>
                         <button type="submit">Send</button>
                     </form>
                 </article>

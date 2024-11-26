@@ -21,7 +21,7 @@ route.post('/sendmail', async (req, res) => {
     let subject = req.body.subject;
     let message = req.body.message;
 
-    console.log(name, email, phone, subject, message);
+
 
     const mailOptions = {
         from: email,
