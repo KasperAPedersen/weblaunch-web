@@ -5,12 +5,12 @@ const route = new Router();
 
 const transporter = nodemailer.createTransport({
     service: "Gmail",
-    host: 'smtp.simply.com',
-    port: 587,
+    host: 'smtp.gmail.com',
+    port: 465,
     secure: true,
     auth: {
-        user: 'mathiaskjan@yahoo.dk',
-        pass: ''
+        user: 'mathiasholstseeger@gmail.com',
+        pass: 'lpaf txrn tpkw vxyp'
     }
 });
 
@@ -21,13 +21,13 @@ route.post('/sendmail', async (req, res) => {
     let subject = req.body.subject;
     let message = req.body.message;
 
-    // validate
+    console.log(name, email, phone, subject, message);
 
     const mailOptions = {
         from: email,
-        to: 'kontakt@weblaunch.dk',
+        to: 'mail@weblaunch.dk',
         subject: subject,
-        text: `Navn: ${name}\nEmail: ${email}\nTelefon: ${phone}\n\nBesked: ${message}`
+        text: `Navn: ${name}\nEmail: ${email}\nTelefon: ${phone}\n\nEmne: ${subject}\nBesked: ${message}`
     };
 
     transporter.sendMail(mailOptions, function(error, info) {

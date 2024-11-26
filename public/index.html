@@ -173,11 +173,14 @@
                     </section>
                     <section id="priceCardForm">
                         <i onclick="togglePriceCardModal();" class="fa-solid fa-xmark"></i>
-                        <form action="" method="POST">
-                            <input type="text" name="first_name" placeholder="Fornavn">
-                            <input type="text" name="last_name" placeholder="Efternavn">
-                            <input type="text" name="email" placeholder="Email">
-                            <textarea name="message" placeholder="Besked"></textarea>
+                        <form action="/sendmail" method="POST" id="orderForm">
+                            <input type="text" name="name" placeholder="Navn" id="orderName">
+                            <input type="text" name="email" placeholder="Email" id="orderMail">
+                            <input type="text" name="phone" placeholder="Telefon" id="orderPhone">
+                            <select name="selected" hidden="hidden">
+                                <option value="1" id="selectedPackage" selected>Standard</option>
+                            </select>
+                            <textarea name="message" placeholder="Besked" id="orderMessage"></textarea>
                             <button type="submit">Send</button>
                         </form>
                     </section>

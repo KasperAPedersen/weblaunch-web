@@ -110,6 +110,7 @@ let viewCard = async (id) => {
             </div>`;
 
         document.getElementById('priceCardText').appendChild(card);
+        document.getElementById('selectedPackage').value = data.name;
 
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
@@ -125,4 +126,33 @@ priceCardModal.addEventListener('click', (event) => {
     if (!(event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom)) {
         priceCardModal.close();
     }
+});
+
+document.getElementById('orderForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    let selectedPackage = document.getElementById('selectedPackage').value;
+    let name = document.getElementById('orderName').value;
+    let email = document.getElementById('orderMail').value;
+    let phone = document.getElementById('orderPhone').value;
+    let message = document.getElementById('orderMessage').value;
+
+    const data = {
+        name: name,
+        email: email,
+        phone: phone,
+        subject: `${selectedPackage} Bestilling`,
+        message: message
+    };
+
+    console.log(data);
+    await fetch('/sendmail', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+
+    togglePriceCardModal();
 });
