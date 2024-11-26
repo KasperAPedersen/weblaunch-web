@@ -25,7 +25,7 @@ route.post('/sendmail', async (req, res) => {
 
     const mailOptions = {
         from: email,
-        to: 'mathiasholstseeger@gmail.com',
+        to: 'kontakt@weblaunch.dk',
         subject: subject,
         text: `Navn: ${name}\nEmail: ${email}\nTelefon: ${phone}\n\nBesked: ${message}`
     };
