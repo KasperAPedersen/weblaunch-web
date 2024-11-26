@@ -77,7 +77,8 @@
 
 
 @media only screen and (max-width: 1200px) {
-    #aboutText p {
+    #aboutText p,
+    #aboutText ul{
         width: 80%;
     }
 
@@ -87,7 +88,8 @@
 }
 
 @media only screen and (max-width: 1000px) {
-    #aboutText p {
+    #aboutText p,
+    #aboutText ul{
         width: 90%;
         font-size: 1.1rem;
     }
@@ -116,7 +118,8 @@
         justify-items: left;
     }
 
-    #about article p {
+    #about article p,
+    #about article ul {
         width: 100%;
         padding: 0 15px;
     }
