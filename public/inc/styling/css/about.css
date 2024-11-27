@@ -75,6 +75,11 @@
     font-weight: bold;
 }
 
+@media only screen and (max-width: 1440px) {
+    #aboutText {
+        padding: 30px;
+    }
+}
 
 @media only screen and (max-width: 1200px) {
     #aboutText p,
