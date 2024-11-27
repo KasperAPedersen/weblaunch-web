@@ -60,6 +60,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         for(let i = 0; i < data.length; i++) {
             let cardData = data[i];
+            const price = new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(cardData.price);
+
             let card = document.createElement('article');
             card.innerHTML = `
             <h3>${cardData.name}</h3>
@@ -72,7 +74,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                             )}
                     </ul>
                     <div>
-                        <p><strong>${cardData.price !== null ? `${cardData.price},-</strong><br><span>(ekskl. moms)</span>` : "Få et tilbud"}</p>
+                        <p><strong>${cardData.price !== null ? `${price}</strong><br><span>(ekskl. moms)</span>` : "Få et tilbud"}</p>
                         <button onclick="viewCard(${cardData.id});">Bestil</button>
                     </div>`;
 
@@ -93,7 +95,7 @@ let viewCard = async (id) => {
         }
         const data = await response.json();
         document.getElementById('priceCardText').innerHTML = "";
-
+        const price = new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(data.price);
         let card = document.createElement('article');
         card.innerHTML = `
             <h3>${data.name}</h3>
@@ -106,7 +108,7 @@ let viewCard = async (id) => {
                 )}
             </ul>
             <div>
-                <p><strong>${data.price !== null ? `${data.price},-</strong><br><span>(ekskl. moms)</span>` : "Få et tilbud"}</p>
+                <p><strong>${data.price !== null ? `${price}</strong><br><span>(ekskl. moms)</span>` : "Få et tilbud"}</p>
             </div>`;
 
         document.getElementById('priceCardText').appendChild(card);

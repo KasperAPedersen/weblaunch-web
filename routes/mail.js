@@ -21,8 +21,6 @@ route.post('/sendmail', async (req, res) => {
     let subject = req.body.subject;
     let message = req.body.message;
 
-
-
     const mailOptions = {
         from: email,
         to: 'mail@weblaunch.dk',
