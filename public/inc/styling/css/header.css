@@ -18,6 +18,7 @@ header>* {
 /* Logo */
 #headerLogo {
     display: flex;
+    width: 40%;
 }
 
 #headerLogo img{
