@@ -4,6 +4,7 @@
     --tertiary-color: #fff;
     --quaternary-color: #2ABF7A;
     --quinary-color: #71F26D;
+    --headerHeight: 125px;
 }
 
 * {

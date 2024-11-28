@@ -1,6 +1,6 @@
 #prices {
     position: relative;
-    min-height: calc(100vh - 125px);
+    min-height: calc(100vh - var(--headerHeight));
     width: 100%;
     background-color: var(--quaternary-color); /* Add your desired background color here */
     display: grid;

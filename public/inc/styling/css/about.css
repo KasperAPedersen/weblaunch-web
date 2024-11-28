@@ -1,5 +1,5 @@
 #about {
-    min-height: calc(100vh - 125px);
+    min-height: calc(100vh - var(--headerHeight));
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
