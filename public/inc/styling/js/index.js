@@ -51,6 +51,7 @@ window.addEventListener('scroll', () => {
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
+    document.getElementById('timestamp').value = Date.now();
     try {
         const response = await fetch('/getAllCards');
         if (!response.ok) {
@@ -173,9 +174,18 @@ document.getElementById('orderForm').addEventListener('submit', async (e) => {
     document.getElementById('orderForm').appendChild(successMessage);
 });
 
-
+// Contact form honeypot
 document.getElementById('contactForm').addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (document.getElementById('website').value !== '') {
+        return;
+    }
+
+    const timeElapsed = Date.now() - document.getElementById('timestamp').value;
+    if (timeElapsed < 3000) {  // If submitted in less than 3 seconds
+        console.log('Submission too fast. Possible bot detected.');
+        return;
+    }
 
     let name = document.getElementById('contactName').value;
     let email = document.getElementById('contactMail').value;
