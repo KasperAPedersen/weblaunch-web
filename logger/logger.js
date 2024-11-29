@@ -32,11 +32,7 @@ const logger = {
         }) + '\n';
 
         logStream.write(logEntry);
-    },
-    info: (message) => logger.log(message, 'INFO'),
-    error: (message) => logger.log(message, 'ERROR'),
-    warn: (message) => logger.log(message, 'WARN'),
-    debug: (message) => logger.log(message, 'DEBUG')
+    }
 };
 
 export default logger;

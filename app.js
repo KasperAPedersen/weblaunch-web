@@ -10,7 +10,7 @@ import requestIp from 'request-ip';
 const app = new Express();
 app.use(requestIp.mw());
 app.use('/', (req, res, next) => {
-    logger.info(req);
+    logger.log(req);
     next();
 });
 
