@@ -1,11 +1,18 @@
 import mail  from './routes/mail.js';
 import cards from './routes/cards.js';
+import logger from './logger/logger.js';
 
 import Express from 'express';
 import axios from 'axios';
 import cookieParser from 'cookie-parser';
+import requestIp from 'request-ip';
 
 const app = new Express();
+app.use(requestIp.mw());
+app.use('/', (req, res, next) => {
+    logger.info(req);
+    next();
+});
 
 app.use(cookieParser());
 app.use(Express.static('public'));
@@ -30,19 +37,12 @@ app.post('/verify-recaptcha', async (req, res) => {
         const {success, score} = response.data;
 
         if (success) {
-            // reCAPTCHA verification successful
-            console.log(`reCAPTCHA score: ${score}`);
-
-            // Decide action based on score
             if (score > 0.5) {
-                // Likely a human
                 res.json({success: true, message: 'reCAPTCHA verification passed'});
             } else {
-                // Likely a bot
                 res.json({success: false, message: 'reCAPTCHA verification failed: possible bot activity'});
             }
         } else {
-            // reCAPTCHA verification failed
             res.json({success: false, message: 'reCAPTCHA verification failed'});
         }
     } catch (error) {
