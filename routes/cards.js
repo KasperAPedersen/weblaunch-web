@@ -19,7 +19,7 @@ route.get('/getAllCards', async (req, res) => {
         });
     }
 
-    res.json(cardData);
+    res.send(cardData);
     res.end();
 });
 

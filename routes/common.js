@@ -8,4 +8,8 @@ route.use('/', (req, res, next) => {
     next();
 });
 
+route.use('/', (req, res) => {
+    res.render('index.ejs');
+});
+
 export default route;

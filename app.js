@@ -7,16 +7,19 @@ import Express from 'express';
 import cookieParser from 'cookie-parser';
 
 const app = new Express();
+
+app.set('view engine', 'ejs');
+app.set('views', './views');
 app.use(cookieParser());
 app.use(Express.static('public'));
 app.use(Express.urlencoded({extended: true}));
 app.use(Express.json());
 
 app.use([
-    common,
     mail,
     cards,
-    captcha
+    captcha,
+    common
 ]);
 
 app.listen(3000, () => {
