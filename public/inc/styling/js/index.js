@@ -177,15 +177,21 @@ document.getElementById('orderForm').addEventListener('submit', async (e) => {
 // Contact form honeypot
 document.getElementById('contactForm').addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (document.getElementById('website').value !== '') {
-        return;
-    }
 
     const timeElapsed = Date.now() - document.getElementById('timestamp').value;
-    if (timeElapsed < 3000) {  // If submitted in less than 3 seconds
-        console.log('Submission too fast. Possible bot detected.');
-        return;
-    }
+    let response = await fetch('verify-recaptcha', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            token: document.getElementById('recaptchaResponse').value
+        })
+    });
+
+    if(!(await response.json()).success) return; // Await captcha response
+    if (document.getElementById('website').value !== '') return; // check honeypot
+    if (timeElapsed < 3000) return; // Check timestamp
 
     let name = document.getElementById('contactName').value;
     let email = document.getElementById('contactMail').value;
@@ -213,7 +219,6 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
         message: message
     };
 
-    console.log(data);
     await fetch('/sendmail', {
         method: 'POST',
         headers: {
@@ -226,4 +231,11 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
     const successMessage = document.createElement('p');
     successMessage.textContent = 'Din besked er blevet sendt med succes!';
     document.getElementById('contactForm').appendChild(successMessage);
+});
+
+grecaptcha.ready(function() {
+  grecaptcha.execute('6Lc50owqAAAAAGoPfPqH_sXEcis5aZqt0Qt-zE3d', {action: 'submit'}).then(function(token) {
+    // Add the token to your form
+    document.getElementById('recaptchaResponse').value = token;
+  });
 });
