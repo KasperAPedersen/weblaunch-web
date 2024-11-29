@@ -3,9 +3,11 @@ import cards from './routes/cards.js';
 
 import Express from 'express';
 import axios from 'axios';
+import cookieParser from 'cookie-parser';
 
 const app = new Express();
 
+app.use(cookieParser());
 app.use(Express.static('public'));
 app.use(Express.urlencoded({extended: true}));
 app.use(Express.json());
