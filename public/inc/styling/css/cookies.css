@@ -18,7 +18,7 @@
 }
 
 .cookieBanner button {
-    max-width: 20%;
+    width: 200px;
     padding: 15px 30px;
     background-color: var(--tertiary-color);
     color: var(--primary-color);
@@ -28,4 +28,19 @@
 
 .cookieBanner button:hover {
     background-color: var(--quinary-color);
+}
+
+@media only screen and (max-width: 425px) {
+    .cookieBanner {
+        display: block;
+    }
+
+    .cookieBanner button {
+        width: 100%;
+    }
+
+    .cookieBanner p {
+        width: 100%;
+        padding: 15px 0;
+    }
 }
