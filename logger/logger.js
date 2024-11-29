@@ -5,17 +5,14 @@ import {fileURLToPath} from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Ensure logs directory exists
 const logsDir = path.join(__dirname, 'logs');
 if (!fs.existsSync(logsDir)) {
     fs.mkdirSync(logsDir, {recursive: true});
 }
 
-// Generate a unique filename for this run
 const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
 const filename = path.join(logsDir, `app-${timestamp}.log`);
 
-// Create a write stream
 const logStream = fs.createWriteStream(filename, {flags: 'a'});
 
 let getIP = (req) => {
