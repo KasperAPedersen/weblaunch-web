@@ -26,10 +26,8 @@ app.use([
 
 app.post('/verify-recaptcha', async (req, res) => {
     try {
-        // Get the reCAPTCHA token from the request body
         const {token} = req.body;
 
-        // Make a POST request to the reCAPTCHA verify API
         const response = await axios.post(
             `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`
         );
