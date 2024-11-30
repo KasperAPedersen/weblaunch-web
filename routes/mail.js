@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-route.post('/sendmail', async (req, res) => {
+route.post('/contact', async (req, res) => {
     let name = req.body.name;
     let email = req.body.email;
     let phone = req.body.phone;

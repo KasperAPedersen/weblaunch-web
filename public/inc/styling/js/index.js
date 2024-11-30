@@ -236,7 +236,7 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
         message: message
     };
 
-    await fetch('/sendmail', {
+    await fetch('/contact', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
