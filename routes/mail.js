@@ -21,6 +21,38 @@ route.post('/sendmail', async (req, res) => {
     let subject = req.body.subject;
     let message = req.body.message;
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        console.log('blocked');
+        return;
+    }
+
+    const phoneRegex = /^(?:\+45)?\s?(?:\d{2}\s?){4}$/;
+    if (!phoneRegex.test(phone)) {
+        console.log('blocked');
+        return;
+    }
+
+    if(name === '' || name === null || name === undefined || (name.split(' ').length < 2)) {
+        console.log('blocked');
+        return;
+    }
+
+    if(phone.length >= 10 || phone.length <= 7) {
+        console.log('blocked');
+        return;
+    }
+
+    if(subject === '' || subject === null || subject === undefined) {
+        console.log('blocked');
+        return;
+    }
+
+    if(message === '' || message === null || message === undefined) {
+        console.log('blocked');
+        return;
+    }
+
     const mailOptions = {
         from: email,
         to: 'mail@weblaunch.dk',

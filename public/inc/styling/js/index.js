@@ -212,6 +212,22 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
         return;
     }
 
+    if(name === '' || name === null || name === undefined || (name.split(' ').length < 2)) {
+        return;
+    }
+
+    if(phone.length >= 10 || phone.length <= 7) {
+        return;
+    }
+
+    if(subject === '' || subject === null || subject === undefined) {
+        return;
+    }
+
+    if(message === '' || message === null || message === undefined) {
+        return;
+    }
+
     const data = {
         name: name,
         email: email,
