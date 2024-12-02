@@ -5,7 +5,7 @@ const route = new Router();
 
 route.use((req, res, next) => {
     // 1. Check Sec-Fetch-* headers
-    const secFetchHeaders = ['sec-fetch-dest', 'sec-fetch-mode', 'sec-fetch-site', 'sec-fetch-user'];
+    /*const secFetchHeaders = ['sec-fetch-dest', 'sec-fetch-mode', 'sec-fetch-site', 'sec-fetch-user'];
     if (secFetchHeaders.some(header => !req.get(header))) {
         console.log("Blocked fetch header");
         return res.status(403).send('Forbidden');
@@ -21,7 +21,7 @@ route.use((req, res, next) => {
     if (req.method === 'HEAD') {
         console.log("Blocked head");
         return res.status(403).send('Forbidden');
-    }
+    }*/
     logger.log(req);
     next();
 });
