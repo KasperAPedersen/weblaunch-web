@@ -1,0 +1,11 @@
+a#CybotCookiebotDialogPoweredbyCybot {
+    display: none;
+}
+#CybotCookiebotDialogNav,
+#CybotCookiebotDialogHeader,
+.CookieCard,
+#CybotCookiebotDialog .CybotCookiebotScrollContainer,
+#CybotCookiebotDialogBodyLevelButtonsSelectPane .CybotCookiebotDialogBodyLevelButtonWrapper:not(:last-of-type),
+#CybotCookiebotDialogBodyLevelButtonsSelectPane {
+    border: transparent;
+}
