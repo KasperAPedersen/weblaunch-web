@@ -4,13 +4,11 @@ import common from './routes/common.js';
 import captcha from './routes/captcha.js';
 
 import Express from 'express';
-import cookieParser from 'cookie-parser';
 
 const app = new Express();
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
-app.use(cookieParser());
 app.use(Express.static('public'));
 app.use(Express.urlencoded({extended: true}));
 app.use(Express.json());
